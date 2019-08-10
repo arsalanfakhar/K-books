@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">K-Books</string>
+    <string name="login">Login</string>
+    <string name="login_subttitle">To Access More Than 3600 Books</string>
+    <string name="no_account">Don\'t have an account?</string>
+    <string name="create_acc">Create Account</string>
+    <string name="have_email">Already have an email?</string>
+</resources>
