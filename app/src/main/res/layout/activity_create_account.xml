@@ -1,291 +1,256 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CreateAccountActivity"
     android:layout_marginLeft="16dp"
+    android:layout_marginStart="16dp"
     android:orientation="vertical"
-    android:layout_marginStart="16dp">
+    tools:context=".CreateAccountActivity">
 
     <com.example.arsalan.k_books.FontTextView
+        android:id="@+id/fontTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingTop="24dp"
+        android:layout_marginTop="24dp"
         android:text="@string/create_acc"
-        android:textAllCaps="true"
         android:textColor="#000000"
         android:textSize="30sp"
-        />
-    <!--<TextView-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:id="@+id/txt_view"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_marginTop="24dp"-->
-        <!--android:letterSpacing="0"-->
-        <!--android:text="@string/create_acc"-->
-        <!--android:textAllCaps="true"-->
-        <!--android:textColor="#000000"-->
-        <!--android:textSize="30sp" />-->
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:textAllCaps="true" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center_vertical|center_horizontal"
-        android:orientation="vertical"
-        android:layout_marginRight="16dp"
-        android:layout_marginEnd="16dp">
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="1dp"
+        android:background="@drawable/top_rounded_image"
+        app:layout_constraintBottom_toTopOf="@+id/frameLayout3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fontTextView"
+        app:layout_constraintVertical_chainStyle="packed">
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="80dp">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-                <RelativeLayout
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_gravity="center_horizontal"
-                    >
-
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical"
-                            android:id="@+id/details_layout">
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:orientation="horizontal"
-                                android:layout_marginBottom="1dp"
-                                >
-                                <FrameLayout
-                                    android:layout_width="50dp"
-                                    android:layout_height="match_parent"
-                                    android:background="@drawable/top_rounded_image">
-                                    <ImageView
-                                        android:layout_width="24dp"
-                                        android:layout_height="match_parent"
-                                        android:layout_gravity="center|center_vertical"
-                                        android:src="@drawable/baseline_person_black_18dp"
-                                        />
-                                </FrameLayout>
-
-                                <EditText
-                                    android:layout_width="match_parent"
-                                    android:hint="Enter User Name"
-                                    style="@style/text_field_style"
-                                    android:background="@drawable/top_rounded_edit_text"/>
-                            </LinearLayout>
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:orientation="horizontal"
-                                android:layout_marginBottom="1dp"
-                                >
-                                <FrameLayout
-                                    android:layout_width="50dp"
-                                    android:layout_height="match_parent"
-                                    android:background="@color/color_img">
-
-                                    <ImageView
-                                        android:layout_width="24dp"
-                                        android:layout_height="match_parent"
-                                        android:layout_gravity="center|center_vertical"
-                                        android:src="@drawable/baseline_email_black_18dp"
-                                        />
-                                </FrameLayout>
-
-                                <EditText
-                                    android:layout_width="match_parent"
-                                    android:hint="Enter Email Id"
-                                    style="@style/text_field_style"
-                                    android:background="@color/color_edit_txt"/>
-                            </LinearLayout>
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:orientation="horizontal"
-                                android:layout_marginBottom="1dp"
-                                >
-                                <FrameLayout
-                                    android:layout_width="50dp"
-                                    android:layout_height="match_parent"
-                                    android:background="@color/color_img">
-
-                                    <ImageView
-                                        android:layout_width="24dp"
-                                        android:layout_height="match_parent"
-                                        android:layout_gravity="center|center_vertical"
-                                        android:src="@drawable/baseline_call_black_18dp"
-                                        />
-                                </FrameLayout>
-                                <EditText
-                                    android:layout_width="match_parent"
-                                    android:hint="Enter Phone Number"
-                                    style="@style/text_field_style"
-                                    android:background="@color/color_edit_txt"/>
-                            </LinearLayout>
-
-
-
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:orientation="horizontal"
-                                android:layout_marginBottom="1dp"
-                                >
-                                <FrameLayout
-                                    android:layout_width="50dp"
-                                    android:layout_height="match_parent"
-                                    android:background="@color/color_img">
-
-                                    <ImageView
-                                        android:layout_width="24dp"
-                                        android:layout_height="match_parent"
-                                        android:layout_gravity="center|center_vertical"
-                                        android:src="@drawable/baseline_lock_black_18dp"
-                                        />
-                                </FrameLayout>
-                                <EditText
-                                    android:layout_width="match_parent"
-                                    android:hint="Enter Password"
-                                    android:background="@color/color_edit_txt"
-                                    style="@style/text_field_style" />
-                            </LinearLayout>
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:orientation="horizontal"
-
-                                >
-                                <FrameLayout
-                                    android:layout_width="50dp"
-                                    android:layout_height="match_parent"
-                                    android:background="@drawable/bottom_rounded_image">
-
-                                    <ImageView
-                                        android:layout_width="24dp"
-                                        android:layout_height="match_parent"
-                                        android:layout_gravity="center|center_vertical"
-                                        android:src="@drawable/baseline_lock_black_18dp"
-                                        />
-                                </FrameLayout>
-
-                                <EditText
-                                    android:layout_width="match_parent"
-                                    android:hint="Re-Enter Password"
-                                    style="@style/text_field_style"
-                                    android:background="@drawable/bottom_rounded_edit_text"/>
-                            </LinearLayout>
-
-
-
-
-
-                        </LinearLayout>
-
-
-
-                    </RelativeLayout>
-
-
-                </RelativeLayout>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:paddingTop="7dp">
-                <FrameLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-                <ImageView
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:src="@drawable/asset7"
-                />
-                </FrameLayout>
-
-            </LinearLayout>
-
-        </RelativeLayout>
-
-
-
-
-
-
-
-
-
-
-
-
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="33dp">
-        <Button
-            android:layout_width="match_parent"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="16dp"
-            android:layout_height="50dp"
-            android:layout_gravity="center"
-            android:text="Create"
-            android:textAllCaps="true"
-            android:textColor="#FFFFFF"
-            android:textSize="26sp"
-            android:background="@drawable/rounded_btn" />
-
-
-        <LinearLayout
+        <ImageView
+            android:id="@+id/imageView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_gravity="center">
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/baseline_person_black_18dp" />
+    </FrameLayout>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/have_email"
-                android:textSize="20sp"
-                android:textColor="#000000"
-                />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:text="@string/login"
-                android:textColor="@color/color_img"
-                android:textSize="22sp"
-                android:linksClickable="true"
-                android:id="@+id/login_txt"/>
-        </LinearLayout>
+    <EditText
+        android:id="@+id/editText"
+        style="@style/text_field_style"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:background="@drawable/top_rounded_edit_text"
+        android:ems="10"
+        android:hint="Enter User Name"
+        android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="@+id/frameLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/frameLayout"
+        app:layout_constraintTop_toTopOf="@+id/frameLayout"
+        app:layout_constraintVertical_bias="1.0" />
 
-    </LinearLayout>
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="32dp"
+        app:layout_constraintBottom_toBottomOf="@+id/editText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/asset7" />
 
+    <FrameLayout
+        android:id="@+id/frameLayout3"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="1dp"
+        android:background="@color/color_img"
+        app:layout_constraintBottom_toTopOf="@+id/frameLayout4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frameLayout">
 
-</RelativeLayout>
+        <ImageView
+            android:id="@+id/imageView7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/baseline_email_black_18dp" />
+    </FrameLayout>
+
+    <EditText
+        android:id="@+id/editText3"
+        style="@style/text_field_style"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:background="@color/color_edit_txt"
+        android:ems="10"
+        android:hint="Enter Email Id"
+        android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="@+id/frameLayout3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/frameLayout3"
+        app:layout_constraintTop_toTopOf="@+id/frameLayout3" />
+
+    <FrameLayout
+        android:id="@+id/frameLayout4"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="1dp"
+        android:background="@color/color_img"
+        app:layout_constraintBottom_toTopOf="@+id/frameLayout5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frameLayout3">
+
+        <ImageView
+            android:id="@+id/imageView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/baseline_call_black_18dp" />
+    </FrameLayout>
+
+    <EditText
+        android:id="@+id/editText4"
+        style="@style/text_field_style"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:background="@color/color_edit_txt"
+        android:ems="10"
+        android:hint="Enter Phone Number"
+        android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="@+id/frameLayout4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/frameLayout4"
+        app:layout_constraintTop_toTopOf="@+id/frameLayout4" />
+
+    <FrameLayout
+        android:id="@+id/frameLayout5"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="1dp"
+        android:background="@color/color_img"
+        app:layout_constraintBottom_toTopOf="@+id/frameLayout6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frameLayout4">
+
+        <ImageView
+            android:id="@+id/imageView9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/baseline_lock_black_18dp" />
+
+    </FrameLayout>
+
+    <EditText
+        android:id="@+id/editText5"
+        style="@style/text_field_style"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:background="@color/color_edit_txt"
+        android:ems="10"
+        android:hint="Enter Password"
+        android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="@+id/frameLayout5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/frameLayout5"
+        app:layout_constraintTop_toTopOf="@+id/frameLayout5"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <FrameLayout
+        android:id="@+id/frameLayout6"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        android:background="@drawable/bottom_rounded_image"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frameLayout5">
+
+        <ImageView
+            android:id="@+id/imageView10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/baseline_lock_black_18dp" />
+    </FrameLayout>
+
+    <EditText
+        android:id="@+id/editText6"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:background="@drawable/bottom_rounded_edit_text"
+        android:ems="10"
+        android:hint="Re-Enter Password"
+        style="@style/text_field_style"
+        app:layout_constraintBottom_toBottomOf="@+id/frameLayout6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/frameLayout6"
+        app:layout_constraintTop_toTopOf="@+id/frameLayout6"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="40dp"
+        android:background="@drawable/rounded_btn"
+        android:text="CREATE"
+        android:textColor="#FFFFFF"
+        android:textSize="26sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/have_email"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/login_txt"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button" />
+
+    <TextView
+        android:id="@+id/login_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginLeft="5dp"
+        android:text="@string/login"
+        android:textColor="@color/color_img"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textView5"
+        app:layout_constraintTop_toBottomOf="@+id/button" />
+
+</android.support.constraint.ConstraintLayout>
