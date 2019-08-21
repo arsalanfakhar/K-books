@@ -14,10 +14,7 @@ public class CreateAccountActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_account);
 
-        //Hide action bar
-        if(getSupportActionBar()!=null){
-            getSupportActionBar().hide();
-        }
+
 
 //        TextView textView = (TextView) findViewById(R.id.txt_view);
 //        Typeface typeface = Typeface.createFromAsset(getAssets(), "Roboto_Black.ttf");

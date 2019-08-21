@@ -17,10 +17,7 @@ public class SplashScreen extends AppCompatActivity {
         setContentView(R.layout.activity_splash_screen);
         bkimage=findViewById(R.id.bk_image);
 
-        //Hide action bar
-        if(getSupportActionBar()!=null){
-            getSupportActionBar().hide();
-        }
+
 
         Glide.with(this). load(R.drawable.imagebk).into(bkimage);
 

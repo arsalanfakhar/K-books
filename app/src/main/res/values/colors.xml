@@ -8,4 +8,13 @@
 
     <color name="color_edit_txt">#EEEEEE</color>
     <color name="color_img">#fec516</color>
+
+
+    <!--<selector xmlns:android="http://schemas.android.com/apk/res/android">-->
+        <!--<item android:color="@color/color_img"-->
+            <!--android:state_checked="true" />-->
+
+        <!--<item android:color="#333"-->
+            <!--android:state_checked="false"/>-->
+    <!--</selector>-->
 </resources>
