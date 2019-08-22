@@ -32,7 +32,7 @@ public class BooksAdapter extends RecyclerView.Adapter<BooksAdapter.BooksViewHol
     }
 
     @Override
-    public void onBindViewHolder(BooksViewHolder booksViewHolder, int position) {
+    public void onBindViewHolder(final BooksViewHolder booksViewHolder, int position) {
         Books books=booksList.get(position);
 
         booksViewHolder.bookTitle.setText(books.getmBookTitle());
@@ -40,9 +40,17 @@ public class BooksAdapter extends RecyclerView.Adapter<BooksAdapter.BooksViewHol
         //set book image,rating,favouriteimg
         //booksViewHolder.favouriteImg.setColorFilter(Color.YELLOW);
         booksViewHolder.ratingBar.setRating(books.getmBookRating());
+
         if(books.ismBookFavourite()){
             booksViewHolder.favouriteImg.setImageResource(R.drawable.ic_favorite_filled);
         }
+        booksViewHolder.favouriteImg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
 
     }
 

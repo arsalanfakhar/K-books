@@ -19,24 +19,33 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <ImageView
-                android:id="@+id/book_img"
+            <android.support.v7.widget.CardView
+                android:id="@+id/cardView4"
                 android:layout_width="140dp"
                 android:layout_height="200dp"
-                app:layout_constraintHorizontal_chainStyle="packed"
+
+                app:cardCornerRadius="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:srcCompat="@drawable/asset13" />
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/book_img"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/white"
+                    android:scaleType="centerCrop"
+                    app:srcCompat="@drawable/asset15" />
+            </android.support.v7.widget.CardView>
 
             <FrameLayout
                 android:id="@+id/materialCardView"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:layout_marginStart="134dp"
-                android:layout_marginLeft="134dp"
                 android:background="@drawable/ic_asset_9"
-                app:layout_constraintBottom_toBottomOf="@+id/book_img"
+                app:layout_constraintBottom_toBottomOf="@+id/cardView4"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/book_img"
+                app:layout_constraintStart_toEndOf="@+id/cardView4"
                 app:layout_constraintTop_toTopOf="parent">
 
                 <android.support.constraint.ConstraintLayout
