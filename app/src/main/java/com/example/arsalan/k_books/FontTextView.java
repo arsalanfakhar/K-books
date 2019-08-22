@@ -4,10 +4,8 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Typeface;
 import android.util.AttributeSet;
-import android.widget.EditText;
-import android.widget.TextView;
 
-public class FontTextView extends android.support.v7.widget.AppCompatTextView {
+public class FontTextView extends androidx.appcompat.widget.AppCompatTextView {
 
 
     public FontTextView(Context context) {

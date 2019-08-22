@@ -1,42 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <android.support.design.card.MaterialCardView
-        android:layout_width="match_parent"
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
         app:cardCornerRadius="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <android.support.constraint.ConstraintLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <android.support.v7.widget.CardView
-                android:id="@+id/cardView4"
-                android:layout_width="140dp"
-                android:layout_height="200dp"
-
-                app:cardCornerRadius="20dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <ImageView
-                    android:id="@+id/book_img"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@android:color/white"
-                    android:scaleType="centerCrop"
-                    app:srcCompat="@drawable/asset15" />
-            </android.support.v7.widget.CardView>
+            android:layout_height="match_parent">
 
             <FrameLayout
                 android:id="@+id/materialCardView"
@@ -48,100 +31,11 @@
                 app:layout_constraintStart_toEndOf="@+id/cardView4"
                 app:layout_constraintTop_toTopOf="parent">
 
-                <android.support.constraint.ConstraintLayout
+                <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
-                    <!--<ImageView-->
-                    <!--android:id="@+id/rate_star1"-->
-                    <!--android:layout_width="wrap_content"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:layout_marginBottom="24dp"-->
-                    <!--app:layout_constraintBottom_toBottomOf="parent"-->
-                    <!--app:layout_constraintStart_toStartOf="@+id/book_descrip"-->
-                    <!--app:srcCompat="@drawable/ic_star_regular" />-->
 
-                    <!--<ImageView-->
-                    <!--android:id="@+id/rate_star2"-->
-                    <!--android:layout_width="wrap_content"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--app:layout_constraintBottom_toBottomOf="@+id/rate_star1"-->
-                    <!--app:layout_constraintStart_toEndOf="@+id/rate_star1"-->
-                    <!--app:layout_constraintTop_toTopOf="@+id/rate_star1"-->
-                    <!--app:srcCompat="@drawable/ic_star_regular" />-->
-
-                    <!--<ImageView-->
-                    <!--android:id="@+id/rate_star3"-->
-                    <!--android:layout_width="wrap_content"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:layout_marginStart="24dp"-->
-                    <!--android:layout_marginLeft="24dp"-->
-                    <!--app:layout_constraintBottom_toBottomOf="@+id/rate_star1"-->
-                    <!--app:layout_constraintStart_toEndOf="@+id/rate_star1"-->
-                    <!--app:layout_constraintTop_toTopOf="@+id/rate_star1"-->
-                    <!--app:layout_constraintVertical_bias="1.0"-->
-                    <!--app:srcCompat="@drawable/ic_star_regular" />-->
-
-                    <!--<ImageView-->
-                    <!--android:id="@+id/rate_star4"-->
-                    <!--android:layout_width="wrap_content"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:layout_marginStart="48dp"-->
-                    <!--android:layout_marginLeft="48dp"-->
-                    <!--app:layout_constraintBottom_toBottomOf="@+id/rate_star1"-->
-                    <!--app:layout_constraintStart_toEndOf="@+id/rate_star1"-->
-                    <!--app:layout_constraintTop_toTopOf="@+id/rate_star1"-->
-                    <!--app:layout_constraintVertical_bias="1.0"-->
-                    <!--app:srcCompat="@drawable/ic_star_regular" />-->
-
-                    <!--<ImageView-->
-                    <!--android:id="@+id/rate_star5"-->
-                    <!--android:layout_width="wrap_content"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:layout_marginStart="72dp"-->
-                    <!--android:layout_marginLeft="72dp"-->
-                    <!--app:layout_constraintBottom_toBottomOf="@+id/rate_star1"-->
-                    <!--app:layout_constraintStart_toEndOf="@+id/rate_star1"-->
-                    <!--app:layout_constraintTop_toTopOf="@+id/rate_star1"-->
-                    <!--app:layout_constraintVertical_bias="1.0"-->
-                    <!--app:srcCompat="@drawable/ic_star_regular" />-->
-
-                    <TextView
-                        android:id="@+id/book_descrip"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="24dp"
-                        android:layout_marginEnd="40dp"
-                        android:layout_marginRight="40dp"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="@+id/book_title"
-                        app:layout_constraintTop_toBottomOf="@+id/book_title"
-                        tools:text="Lorem Ipsum is simply dummy text of the printing ." />
-
-                    <TextView
-                        android:id="@+id/book_title"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginLeft="16dp"
-                        android:layout_marginTop="14dp"
-                        android:textColor="#000000"
-                        android:textSize="18sp"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        tools:text="LOREM IPSUM" />
-
-                    <ImageView
-                        android:id="@+id/favourite_img"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="14dp"
-                        android:layout_marginEnd="8dp"
-                        android:layout_marginRight="8dp"
-                        android:contentDescription="TODO"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:srcCompat="@drawable/ic_favorite_unfilled" />
 
                     <Button
                         android:id="@+id/buy_now_btn"
@@ -156,6 +50,18 @@
                         android:textSize="18sp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/favourite_img"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="14dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginRight="8dp"
+                        android:contentDescription="TODO"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/ic_favorite_unfilled" />
 
                     <RatingBar
                         android:id="@+id/ratingBar"
@@ -179,13 +85,57 @@
                         app:layout_constraintEnd_toStartOf="@+id/buy_now_btn"
                         app:layout_constraintStart_toStartOf="parent" />
 
-                </android.support.constraint.ConstraintLayout>
+                    <TextView
+                        android:id="@+id/book_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginTop="14dp"
+                        android:textColor="#000000"
+                        android:textSize="18sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="LOREM IPSUM" />
+
+                    <TextView
+                        android:id="@+id/book_descrip"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="24dp"
+                        android:layout_marginEnd="40dp"
+                        android:layout_marginRight="40dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@+id/book_title"
+                        app:layout_constraintTop_toBottomOf="@+id/book_title"
+                        tools:text="Lorem Ipsum is simply dummy text of the printing ." />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
             </FrameLayout>
 
-        </android.support.constraint.ConstraintLayout>
-    </android.support.design.card.MaterialCardView>
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView4"
+                android:layout_width="140dp"
+                android:layout_height="200dp"
+
+                app:cardCornerRadius="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/book_img"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/white"
+                    android:scaleType="centerCrop"
+                    app:srcCompat="@drawable/asset15" />
+            </androidx.cardview.widget.CardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
 
 
 
-</android.support.constraint.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
