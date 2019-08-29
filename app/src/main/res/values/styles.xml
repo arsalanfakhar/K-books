@@ -1,7 +1,7 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
@@ -16,12 +16,25 @@
         <item name="android:inputType">text</item>
         <item name="android:maxLines">1</item>
     </style>
+
     <style name="RatingBar" parent="Theme.AppCompat">
         <item name="colorControlNormal">#62ede0</item>
         <item name="colorControlActivated">@color/color_img</item>
     </style>
 
+    <!-- Chips present on PostAdFragment. -->
+    <style name="custom_chip_style" parent="@style/Widget.MaterialComponents.Chip.Filter">
 
+        <item name="android:layout_width">120dp</item>
 
+        <item name="android:layout_height">wrap_content</item>
+    </style>
 
+    <!-- Text fields shape on PostAdFragment. -->
+    <style name="post_ad_text_field" parent="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxCornerRadiusBottomEnd">30dp</item>
+        <item name="boxCornerRadiusBottomStart">30dp</item>
+        <item name="boxCornerRadiusTopStart">30dp</item>
+        <item name="boxCornerRadiusTopEnd">30dp</item>
+    </style>
 </resources>

@@ -1,13 +1,15 @@
 package com.example.arsalan.k_books;
 
-import androidx.annotation.NonNull;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import androidx.fragment.app.Fragment;
 import androidx.appcompat.app.AppCompatActivity;
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 import android.os.Bundle;
 import android.view.MenuItem;
 
-import com.example.arsalan.k_books.fragment.FavouritesFragment;
+import com.example.arsalan.k_books.fragment.PostAdFragment;
 import com.example.arsalan.k_books.fragment.HomeFragment;
 
 public class DashboardActivity extends AppCompatActivity {
@@ -21,8 +23,8 @@ public class DashboardActivity extends AppCompatActivity {
                 case R.id.nav_home:
                     selectedfragment=new HomeFragment();
                     break;
-                case R.id.nav_book:
-                    selectedfragment=new FavouritesFragment();
+                case R.id.nav_post_add:
+                    selectedfragment=new PostAdFragment();
                     break;
 
             }
@@ -32,6 +34,10 @@ public class DashboardActivity extends AppCompatActivity {
             return true;
         }
     };
+
+
+    @BindView(R.id.bottom_nav) BottomNavigationView navigationView;
+
 
 
     @Override
@@ -44,9 +50,14 @@ public class DashboardActivity extends AppCompatActivity {
 //            getSupportActionBar().hide();
 //        }
 
-        BottomNavigationView navigationView=findViewById(R.id.bottom_nav);
+
+        ButterKnife.bind(this);
+
+
+
         navigationView.setOnNavigationItemSelectedListener(navListener);
 
+        //opening home fragment by default
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                 new HomeFragment()).commit();
 

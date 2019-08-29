@@ -4,21 +4,32 @@ package com.example.arsalan.k_books.fragment;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModel;
+import androidx.lifecycle.ViewModelProvider;
+import androidx.lifecycle.ViewModelProviders;
 import androidx.viewpager.widget.ViewPager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.appcompat.widget.SearchView;
+
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 
 import com.example.arsalan.k_books.BooksAdapter;
 import com.example.arsalan.k_books.R;
 import com.example.arsalan.k_books.ViewPagerAdapter;
+import com.example.arsalan.k_books.databinding.FragmentHomeBinding;
 import com.example.arsalan.k_books.model.Books;
 import com.example.arsalan.k_books.model.Slider;
+import com.example.arsalan.k_books.viewmodels.HomeFragmentViewModel;
+import com.google.android.material.chip.Chip;
+import com.google.android.material.chip.ChipGroup;
 import com.tbuonomo.viewpagerdotsindicator.DotsIndicator;
 
 import java.util.ArrayList;
@@ -34,24 +45,53 @@ public class HomeFragment extends Fragment {
     private List<Slider> mSliderList;
     private DotsIndicator dotsIndicator;
 
+    private ChipGroup chipGroup;
 
-
+    private HomeFragmentViewModel homeFragmentViewModel;
+    private FragmentHomeBinding binding;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
 
-        View view= inflater.inflate(R.layout.fragment_home,container,false);
+//        View view= inflater.inflate(R.layout.fragment_home,container,false);
 
-        SearchView searchView=view.findViewById(R.id.search_txt);
+        homeFragmentViewModel= ViewModelProviders.of(this).get(HomeFragmentViewModel.class);
+        homeFragmentViewModel.init();
 
-        searchView.setIconified(true);
+        binding= DataBindingUtil.inflate(inflater,R.layout.fragment_home,container,false);
+        View view=binding.getRoot();
 
 
-        RecyclerView recyclerView=view.findViewById(R.id.recycler_view);
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        binding.setCloudtags(homeFragmentViewModel);
+        binding.setLifecycleOwner(this);
+
+
+
+        binding.searchTxt.setIconified(true);
+
+        binding.searchTxt.setOnSearchClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                    List<String> tags=homeFragmentViewModel.getCloudTags().getValue();
+                    showChips(tags);
+
+            }
+        });
+
+        binding.searchTxt.setOnCloseListener(new SearchView.OnCloseListener() {
+            @Override
+            public boolean onClose() {
+                hideChips();
+                return false;
+            }
+        });
+
+
+        binding.recyclerView.setHasFixedSize(true);
+        binding.recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
         mBooksList=new ArrayList<>();
 
@@ -67,7 +107,7 @@ public class HomeFragment extends Fragment {
 
         BooksAdapter booksAdapter=new BooksAdapter(getContext(),mBooksList);
 
-        recyclerView.setAdapter(booksAdapter);
+        binding.recyclerView.setAdapter(booksAdapter);
 //        ImageView icon= searchView.findViewById(android.support.v7.appcompat.R.id.search_button);
 //
 //        icon.setColorFilter(Color.WHITE);
@@ -90,12 +130,9 @@ public class HomeFragment extends Fragment {
 
         dotsIndicator.setViewPager(mViewPager);
 
+        //add chips
 
-
-
-
-
-
+        chipGroup = view.findViewById(R.id.chip_group);
 
 
 
@@ -103,4 +140,39 @@ public class HomeFragment extends Fragment {
 
         return view;
     }
+    private void showChips(List<String> tagList){
+
+        for (int index = 0; index < tagList.size(); index++) {
+            final String tagName = tagList.get(index);
+            final Chip chip = new Chip(binding.chipGroup.getContext());
+
+            chip.setPadding(10, 10, 10, 10);
+            chip.setText(tagName);
+
+            binding.chipGroup.addView(chip);
+        }
+        binding.chipGroup.setVisibility(View.VISIBLE);
+    }
+    private void hideChips(){
+        binding.chipGroup.setVisibility(View.GONE);
+        binding.chipGroup.removeAllViews();
+    }
+
+//    private void setchips(final List<String> tagList) {
+//
+//        for (int index = 0; index < tagList.size(); index++) {
+//            final String tagName = tagList.get(index);
+//            final Chip chip = new Chip(getContext());
+//            int paddingDp = (int) TypedValue.applyDimension(
+//                    TypedValue.COMPLEX_UNIT_DIP, 10,
+//                    getResources().getDisplayMetrics()
+//            );
+//            chip.setPadding(paddingDp, paddingDp, paddingDp, paddingDp);
+//            chip.setText(tagName);
+//
+//            chipGroup.addView(chip);
+//        }
+//    }
+//
+
 }

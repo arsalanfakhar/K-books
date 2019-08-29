@@ -5,5 +5,11 @@
     <string name="no_account">Don\'t have an account?</string>
     <string name="create_acc">Create Account</string>
     <string name="have_email">Already have an email?</string>
+    <string name="include_detail">Include Some Details</string>
+    <string name="condition">Conditions*</string>
+    <string name="condition_new">New</string>
+    <string name="condition_used">Used</string>
+    <string name="type">Type</string>
+    <string name="education_cat_error">Type is necessary. Please complete the required field</string>
 
 </resources>

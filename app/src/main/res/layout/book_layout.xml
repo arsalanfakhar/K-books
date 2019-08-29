@@ -36,18 +36,18 @@
                     android:layout_height="match_parent">
 
 
-
-                    <Button
+                    <com.google.android.material.button.MaterialButton
                         android:id="@+id/buy_now_btn"
-                        android:layout_width="90dp"
-                        android:layout_height="35dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
                         android:layout_marginRight="8dp"
                         android:layout_marginBottom="16dp"
-                        android:background="@drawable/rounded_btn_buy_now"
+                        android:backgroundTint="#333333"
                         android:text="Buy Now"
                         android:textAllCaps="false"
                         android:textColor="#FFFFFF"
-                        android:textSize="18sp"
+                        android:textSize="14sp"
+                        app:cornerRadius="100dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent" />
 

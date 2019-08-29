@@ -5,13 +5,14 @@
         android:title="Home"
         android:checked="true"/>
 
-    <item android:id="@+id/nav_book"
-        android:icon="@drawable/asset10"
-        android:title="Request book" />
-
     <item android:id="@+id/nav_post_add"
+        android:icon="@drawable/asset10"
+        android:title="Post an ad" />
+
+
+    <item android:id="@+id/nav_book"
         android:icon="@drawable/asset11"
-        android:title=""/>
+        android:title="Request book"/>
 
     <item android:id="@+id/nav_profile"
         android:icon="@drawable/asset12"

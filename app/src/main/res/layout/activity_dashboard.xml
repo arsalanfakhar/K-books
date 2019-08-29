@@ -29,6 +29,7 @@
         app:itemIconTint="@color/tab_selector"
         app:labelVisibilityMode="unlabeled"
         android:id="@+id/bottom_nav"
+        app:layout_behavior="com.mypackage.BottomNavigationBehavior"
         >
 
     </com.google.android.material.bottomnavigation.BottomNavigationView>
